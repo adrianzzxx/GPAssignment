@@ -15,7 +15,7 @@ int Qnum = 1;
 
 float R = 0.0, G = 0, B = 0;
 
-float OLeft = -10.0, ORight = 10.0, ODown = -10.0, OUp = 10.0, ONear = -10.0, OFar = 10.0;
+float OLeft = -15.0, ORight = 15.0, ODown = -15.0, OUp = 15.0, ONear = -15.0, OFar = 15.0;
 float PNear = 1.0, PFar = 20.0;
 float SphereR = 3.0;
 float ptX = 0.0, ptY = 0.0, ptSpeed = 0.1;
@@ -147,7 +147,573 @@ void robot() {
 	glMatrixMode(GL_MODELVIEW);
 	
 	//simply write something
+	
+}
 
+void drawFinger() {
+	glPushMatrix();
+	glTranslatef(0.0, -1.0, 0.0);
+	//glRotatef(-90.0, 1.0, 0.0, 0.0);
+			//////////////////////////////////////////////////////////////draw finger 1-1
+	glPushMatrix();
+	/////////////////////////////////////////upper face
+	glColor3f(1.0, 0.0, 0.0);
+	glBegin(GL_QUADS);
+	glVertex3f(-0.5, -0.0, 0.0);
+	glVertex3f(-0.25, -0.0, 0.0);
+	glVertex3f(-0.25, -0.0, 0.25);
+	glVertex3f(-0.5, -0.0, 0.25);
+	glEnd();
+	/////////////////////////////////////////lower face
+	glBegin(GL_QUADS);
+	glVertex3f(-0.5, -0.25, 0.0);
+	glVertex3f(-0.25, -0.25, 0.0);
+	glVertex3f(-0.25, -0.25, 0.25);
+	glVertex3f(-0.5, -0.25, 0.25);
+	glEnd();
+	/////////////////////////////////////////front face
+	glBegin(GL_QUADS);
+	glVertex3f(-0.5, -0.0, 0.0);
+	glVertex3f(-0.25, -0.0, 0.0);
+	glVertex3f(-0.25, -0.25, 0.0);
+	glVertex3f(-0.5, -0.25, 0.0);
+	glEnd();
+	/////////////////////////////////////////back face
+	glBegin(GL_QUADS);
+	glVertex3f(-0.5, -0.0, 0.25);
+	glVertex3f(-0.25, -0.0, 0.25);
+	glVertex3f(-0.25, -0.25, 0.25);
+	glVertex3f(-0.5, -0.25, 0.25);
+	glEnd();
+	/////////////////////////////////////////left face
+	glBegin(GL_QUADS);
+	glVertex3f(-0.5, -0.0, 0.0);
+	glVertex3f(-0.5, -0.0, 0.25);
+	glVertex3f(-0.5, -0.25, 0.25);
+	glVertex3f(-0.5, -0.25, 0.0);
+	glEnd();
+	/////////////////////////////////////////right face
+	glBegin(GL_QUADS);
+	glVertex3f(-0.25, -0.0, 0.0);
+	glVertex3f(-0.25, -0.0, 0.25);
+	glVertex3f(-0.25, -0.25, 0.25);
+	glVertex3f(-0.25, -0.25, 0.0);
+	glEnd();
+	glPopMatrix();
+	//////////////////////////////////////////////////////////////draw finger 2-1
+	glPushMatrix();
+	/////////////////////////////////////////upper face
+	glColor3f(0.0, 1.0, 0.0);
+	glBegin(GL_QUADS);
+	glVertex3f(-0.25, -0.0, 0.0);
+	glVertex3f(0.0, -0.0, 0.0);
+	glVertex3f(0.0, -0.0, 0.25);
+	glVertex3f(-0.25, -0.0, 0.25);
+	glEnd();
+	/////////////////////////////////////////lower face
+	glBegin(GL_QUADS);
+	glVertex3f(-0.25, -0.25, 0.0);
+	glVertex3f(0.0, -0.25, 0.0);
+	glVertex3f(0.0, -0.25, 0.25);
+	glVertex3f(-0.25, -0.25, 0.25);
+	glEnd();
+	/////////////////////////////////////////front face
+	glBegin(GL_QUADS);
+	glVertex3f(-0.25, -0.0, 0.0);
+	glVertex3f(0.0, -0.0, 0.0);
+	glVertex3f(0.0, -0.25, 0.0);
+	glVertex3f(-0.25, -0.25, 0.0);
+	glEnd();
+	/////////////////////////////////////////back face
+	glBegin(GL_QUADS);
+	glVertex3f(-0.25, -0.0, 0.25);
+	glVertex3f(0.0, -0.0, 0.25);
+	glVertex3f(0.0, -0.25, 0.25);
+	glVertex3f(-0.25, -0.25, 0.25);
+	glEnd();
+	/////////////////////////////////////////left face
+	glBegin(GL_QUADS);
+	glVertex3f(-0.25, -0.0, 0.0);
+	glVertex3f(-0.25, -0.0, 0.25);
+	glVertex3f(-0.25, -0.25, 0.25);
+	glVertex3f(-0.25, -0.25, 0.0);
+	glEnd();
+	/////////////////////////////////////////right face
+	glBegin(GL_QUADS);
+	glVertex3f(0.0, -0.0, 0.0);
+	glVertex3f(0.0, -0.0, 0.25);
+	glVertex3f(0.0, -0.25, 0.25);
+	glVertex3f(0.0, -0.25, 0.0);
+	glEnd();
+	glPopMatrix();
+	//////////////////////////////////////////////////////////////draw finger 3-1
+	glPushMatrix();
+	/////////////////////////////////////////upper face
+	glColor3f(0.0, 0.0, 1.0);
+	glBegin(GL_QUADS);
+	glVertex3f(0.0, -0.0, 0.0);
+	glVertex3f(0.25, -0.0, 0.0);
+	glVertex3f(0.25, -0.0, 0.25);
+	glVertex3f(0.0, -0.0, 0.25);
+	glEnd();
+	/////////////////////////////////////////lower face
+	glBegin(GL_QUADS);
+	glVertex3f(0.0, -0.25, 0.0);
+	glVertex3f(0.25, -0.25, 0.0);
+	glVertex3f(0.25, -0.25, 0.25);
+	glVertex3f(0.0, -0.25, 0.25);
+	glEnd();
+	/////////////////////////////////////////front face
+	glBegin(GL_QUADS);
+	glVertex3f(0.0, -0.0, 0.0);
+	glVertex3f(0.25, -0.0, 0.0);
+	glVertex3f(0.25, -0.25, 0.0);
+	glVertex3f(0.0, -0.25, 0.0);
+	glEnd();
+	/////////////////////////////////////////back face
+	glBegin(GL_QUADS);
+	glVertex3f(0.0, -0.0, 0.25);
+	glVertex3f(0.25, -0.0, 0.25);
+	glVertex3f(0.25, -0.25, 0.25);
+	glVertex3f(0.0, -0.25, 0.25);
+	glEnd();
+	/////////////////////////////////////////left face
+	glBegin(GL_QUADS);
+	glVertex3f(0.0, -0.0, 0.0);
+	glVertex3f(0.0, -0.0, 0.25);
+	glVertex3f(0.0, -0.25, 0.25);
+	glVertex3f(0.0, -0.25, 0.0);
+	glEnd();
+	/////////////////////////////////////////right face
+	glBegin(GL_QUADS);
+	glVertex3f(0.25, -0.0, 0.0);
+	glVertex3f(0.25, -0.0, 0.25);
+	glVertex3f(0.25, -0.25, 0.25);
+	glVertex3f(0.25, -0.25, 0.0);
+	glEnd();
+	glPopMatrix();
+	//////////////////////////////////////////////////////////////draw finger 4-1
+	glPushMatrix();
+	/////////////////////////////////////////upper face
+	glColor3f(1.0, 0.0, 0.0);
+	glBegin(GL_QUADS);
+	glVertex3f(0.5, -0.0, 0.0);
+	glVertex3f(0.25, -0.0, 0.0);
+	glVertex3f(0.25, -0.0, 0.25);
+	glVertex3f(0.5, -0.0, 0.25);
+	glEnd();
+	/////////////////////////////////////////lower face
+	glBegin(GL_QUADS);
+	glVertex3f(0.5, -0.25, 0.0);
+	glVertex3f(0.25, -0.25, 0.0);
+	glVertex3f(0.25, -0.25, 0.25);
+	glVertex3f(0.5, -0.25, 0.25);
+	glEnd();
+	/////////////////////////////////////////front face
+	glBegin(GL_QUADS);
+	glVertex3f(0.5, -0.0, 0.0);
+	glVertex3f(0.25, -0.0, 0.0);
+	glVertex3f(0.25, -0.25, 0.0);
+	glVertex3f(0.5, -0.25, 0.0);
+	glEnd();
+	/////////////////////////////////////////back face
+	glBegin(GL_QUADS);
+	glVertex3f(0.5, -0.0, 0.25);
+	glVertex3f(0.25, -0.0, 0.25);
+	glVertex3f(0.25, -0.25, 0.25);
+	glVertex3f(0.5, -0.25, 0.25);
+	glEnd();
+	/////////////////////////////////////////left face
+	glBegin(GL_QUADS);
+	glVertex3f(0.5, -0.0, 0.0);
+	glVertex3f(0.5, -0.0, 0.25);
+	glVertex3f(0.5, -0.25, 0.25);
+	glVertex3f(0.5, -0.25, 0.0);
+	glEnd();
+	/////////////////////////////////////////right face
+	glBegin(GL_QUADS);
+	glVertex3f(0.25, -0.0, 0.0);
+	glVertex3f(0.25, -0.0, 0.25);
+	glVertex3f(0.25, -0.25, 0.25);
+	glVertex3f(0.25, -0.25, 0.0);
+	glEnd();
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslatef(0.0, -0.25, 0.0);
+	glRotatef(-45, 1.0, 0.0, 0.0);
+	//////////////////////////////////////////////////////////////draw finger 1-2
+	glPushMatrix();
+	/////////////////////////////////////////upper face
+	glColor3f(0.0, 1.0, 0.0);
+	glBegin(GL_QUADS);
+	glVertex3f(-0.5, -0.0, 0.0);
+	glVertex3f(-0.25, -0.0, 0.0);
+	glVertex3f(-0.25, -0.0, 0.25);
+	glVertex3f(-0.5, -0.0, 0.25);
+	glEnd();
+	/////////////////////////////////////////lower face
+	glBegin(GL_QUADS);
+	glVertex3f(-0.5, -0.25, 0.0);
+	glVertex3f(-0.25, -0.25, 0.0);
+	glVertex3f(-0.25, -0.25, 0.25);
+	glVertex3f(-0.5, -0.25, 0.25);
+	glEnd();
+	/////////////////////////////////////////front face
+	glBegin(GL_QUADS);
+	glVertex3f(-0.5, -0.0, 0.0);
+	glVertex3f(-0.25, -0.0, 0.0);
+	glVertex3f(-0.25, -0.25, 0.0);
+	glVertex3f(-0.5, -0.25, 0.0);
+	glEnd();
+	/////////////////////////////////////////back face
+	glBegin(GL_QUADS);
+	glVertex3f(-0.5, -0.0, 0.25);
+	glVertex3f(-0.25, -0.0, 0.25);
+	glVertex3f(-0.25, -0.25, 0.25);
+	glVertex3f(-0.5, -0.25, 0.25);
+	glEnd();
+	/////////////////////////////////////////left face
+	glBegin(GL_QUADS);
+	glVertex3f(-0.5, -0.0, 0.0);
+	glVertex3f(-0.5, -0.0, 0.25);
+	glVertex3f(-0.5, -0.25, 0.25);
+	glVertex3f(-0.5, -0.25, 0.0);
+	glEnd();
+	/////////////////////////////////////////right face
+	glBegin(GL_QUADS);
+	glVertex3f(-0.25, -0.0, 0.0);
+	glVertex3f(-0.25, -0.0, 0.25);
+	glVertex3f(-0.25, -0.25, 0.25);
+	glVertex3f(-0.25, -0.25, 0.0);
+	glEnd();
+	glPopMatrix();
+	//////////////////////////////////////////////////////////////draw finger 2-2
+	glPushMatrix();
+	/////////////////////////////////////////upper face
+	glColor3f(0.0, 0.0, 1.0);
+	glBegin(GL_QUADS);
+	glVertex3f(-0.25, -0.0, 0.0);
+	glVertex3f(0.0, -0.0, 0.0);
+	glVertex3f(0.0, -0.0, 0.25);
+	glVertex3f(-0.25, -0.0, 0.25);
+	glEnd();
+	/////////////////////////////////////////lower face
+	glBegin(GL_QUADS);
+	glVertex3f(-0.25, -0.25, 0.0);
+	glVertex3f(-0.0, -0.25, 0.0);
+	glVertex3f(-0.0, -0.25, 0.25);
+	glVertex3f(-0.25, -0.25, 0.25);
+	glEnd();
+	/////////////////////////////////////////front face
+	glBegin(GL_QUADS);
+	glVertex3f(-0.25, -0.0, 0.0);
+	glVertex3f(-0.0, -0.0, 0.0);
+	glVertex3f(-0.0, -0.25, 0.0);
+	glVertex3f(-0.25, -0.25, 0.0);
+	glEnd();
+	/////////////////////////////////////////back face
+	glBegin(GL_QUADS);
+	glVertex3f(-0.25, -0.0, 0.25);
+	glVertex3f(-0.0, -0.0, 0.25);
+	glVertex3f(-0.0, -0.25, 0.25);
+	glVertex3f(-0.25, -0.25, 0.25);
+	glEnd();
+	/////////////////////////////////////////left face
+	glBegin(GL_QUADS);
+	glVertex3f(-0.25, -0.0, 0.0);
+	glVertex3f(-0.25, -0.0, 0.25);
+	glVertex3f(-0.25, -0.25, 0.25);
+	glVertex3f(-0.25, -0.25, 0.0);
+	glEnd();
+	/////////////////////////////////////////right face
+	glBegin(GL_QUADS);
+	glVertex3f(-0.0, -0.0, 0.0);
+	glVertex3f(-0.0, -0.0, 0.25);
+	glVertex3f(-0.0, -0.25, 0.25);
+	glVertex3f(-0.0, -0.25, 0.0);
+	glEnd();
+	glPopMatrix();
+	//////////////////////////////////////////////////////////////draw finger 3-2
+	glPushMatrix();
+	/////////////////////////////////////////upper face
+	glColor3f(1.0, 0.0, 0.0);
+	glBegin(GL_QUADS);
+	glVertex3f(0.0, -0.0, 0.0);
+	glVertex3f(0.25, -0.0, 0.0);
+	glVertex3f(0.25, -0.0, 0.25);
+	glVertex3f(0.0, -0.0, 0.25);
+	glEnd();
+	/////////////////////////////////////////lower face
+	glBegin(GL_QUADS);
+	glVertex3f(0.0, -0.25, 0.0);
+	glVertex3f(0.25, -0.25, 0.0);
+	glVertex3f(0.25, -0.25, 0.25);
+	glVertex3f(0.0, -0.25, 0.25);
+	glEnd();
+	/////////////////////////////////////////front face
+	glBegin(GL_QUADS);
+	glVertex3f(0.0, -0.0, 0.0);
+	glVertex3f(0.25, -0.0, 0.0);
+	glVertex3f(0.25, -0.25, 0.0);
+	glVertex3f(0.0, -0.25, 0.0);
+	glEnd();
+	/////////////////////////////////////////back face
+	glBegin(GL_QUADS);
+	glVertex3f(0.0, -0.0, 0.25);
+	glVertex3f(0.25, -0.0, 0.25);
+	glVertex3f(0.25, -0.25, 0.25);
+	glVertex3f(0.0, -0.25, 0.25);
+	glEnd();
+	/////////////////////////////////////////left face
+	glBegin(GL_QUADS);
+	glVertex3f(0.0, -0.0, 0.0);
+	glVertex3f(0.0, -0.0, 0.25);
+	glVertex3f(0.0, -0.25, 0.25);
+	glVertex3f(0.0, -0.25, 0.0);
+	glEnd();
+	/////////////////////////////////////////right face
+	glBegin(GL_QUADS);
+	glVertex3f(0.25, -0.0, 0.0);
+	glVertex3f(0.25, -0.0, 0.25);
+	glVertex3f(0.25, -0.25, 0.25);
+	glVertex3f(0.25, -0.25, 0.0);
+	glEnd();
+	glPopMatrix();
+	//////////////////////////////////////////////////////////////draw finger 4-2
+	glPushMatrix();
+	/////////////////////////////////////////upper face
+	glColor3f(0.0, 1.0, 0.0);
+	glBegin(GL_QUADS);
+	glVertex3f(0.5, -0.0, 0.0);
+	glVertex3f(0.25, -0.0, 0.0);
+	glVertex3f(0.25, -0.0, 0.25);
+	glVertex3f(0.5, -0.0, 0.25);
+	glEnd();
+	/////////////////////////////////////////lower face
+	glBegin(GL_QUADS);
+	glVertex3f(0.5, -0.25, 0.0);
+	glVertex3f(0.25, -0.25, 0.0);
+	glVertex3f(0.25, -0.25, 0.25);
+	glVertex3f(0.5, -0.25, 0.25);
+	glEnd();
+	/////////////////////////////////////////front face
+	glBegin(GL_QUADS);
+	glVertex3f(0.5, -0.0, 0.0);
+	glVertex3f(0.25, -0.0, 0.0);
+	glVertex3f(0.25, -0.25, 0.0);
+	glVertex3f(0.5, -0.25, 0.0);
+	glEnd();
+	/////////////////////////////////////////back face
+	glBegin(GL_QUADS);
+	glVertex3f(0.5, -0.0, 0.25);
+	glVertex3f(0.25, -0.0, 0.25);
+	glVertex3f(0.25, -0.25, 0.25);
+	glVertex3f(0.5, -0.25, 0.25);
+	glEnd();
+	/////////////////////////////////////////left face
+	glBegin(GL_QUADS);
+	glVertex3f(0.5, -0.0, 0.0);
+	glVertex3f(0.5, -0.0, 0.25);
+	glVertex3f(0.5, -0.25, 0.25);
+	glVertex3f(0.5, -0.25, 0.0);
+	glEnd();
+	/////////////////////////////////////////right face
+	glBegin(GL_QUADS);
+	glVertex3f(0.25, -0.0, 0.0);
+	glVertex3f(0.25, -0.0, 0.25);
+	glVertex3f(0.25, -0.25, 0.25);
+	glVertex3f(0.25, -0.25, 0.0);
+	glEnd();
+	glPopMatrix();
+
+	plPushMatrix
+	//////////////////////////////////////////////////////////////draw finger 1-3
+	glPushMatrix();
+	/////////////////////////////////////////upper face
+	glColor3f(0.0, 0.0, 1.0);
+	glBegin(GL_QUADS);
+	glVertex3f(-0.5, -0.0, 0.0);
+	glVertex3f(-0.25, -0.0, 0.0);
+	glVertex3f(-0.25, -0.0, 0.25);
+	glVertex3f(-0.5, -0.0, 0.25);
+	glEnd();
+	/////////////////////////////////////////lower face
+	glBegin(GL_QUADS);
+	glVertex3f(-0.5, -0.25, 0.0);
+	glVertex3f(-0.25, -0.25, 0.0);
+	glVertex3f(-0.25, -0.25, 0.25);
+	glVertex3f(-0.5, -0.25, 0.25);
+	glEnd();
+	/////////////////////////////////////////front face
+	glBegin(GL_QUADS);
+	glVertex3f(-0.5, -0.0, 0.0);
+	glVertex3f(-0.25, -0.0, 0.0);
+	glVertex3f(-0.25, -0.25, 0.0);
+	glVertex3f(-0.5, -0.25, 0.0);
+	glEnd();
+	/////////////////////////////////////////back face
+	glBegin(GL_QUADS);
+	glVertex3f(-0.5, -0.0, 0.25);
+	glVertex3f(-0.25, -0.0, 0.25);
+	glVertex3f(-0.25, -0.25, 0.25);
+	glVertex3f(-0.5, -0.25, 0.25);
+	glEnd();
+	/////////////////////////////////////////left face
+	glBegin(GL_QUADS);
+	glVertex3f(-0.5, -0.0, 0.0);
+	glVertex3f(-0.5, -0.0, 0.25);
+	glVertex3f(-0.5, -0.25, 0.25);
+	glVertex3f(-0.5, -0.25, 0.0);
+	glEnd();
+	/////////////////////////////////////////right face
+	glBegin(GL_QUADS);
+	glVertex3f(-0.25, -0.0, 0.0);
+	glVertex3f(-0.25, -0.0, 0.25);
+	glVertex3f(-0.25, -0.25, 0.25);
+	glVertex3f(-0.25, -0.25, 0.0);
+	glEnd();
+	glPopMatrix();
+	//////////////////////////////////////////////////////////////draw finger 2-3
+	glPushMatrix();
+	/////////////////////////////////////////upper face
+	glColor3f(1.0, 0.0, 0.0);
+	glBegin(GL_QUADS);
+	glVertex3f(-0.25, -0.0, 0.0);
+	glVertex3f(-0.0, -0.0, 0.0);
+	glVertex3f(-0.0, -0.0, 0.25);
+	glVertex3f(-0.25, -0.0, 0.25);
+	glEnd();
+	/////////////////////////////////////////lower face
+	glBegin(GL_QUADS);
+	glVertex3f(-0.25, -0.25, 0.0);
+	glVertex3f(-0.0, -0.25, 0.0);
+	glVertex3f(-0.0, -0.25, 0.25);
+	glVertex3f(-0.25, -0.25, 0.25);
+	glEnd();
+	/////////////////////////////////////////front face
+	glBegin(GL_QUADS);
+	glVertex3f(-0.25, -0.0, 0.0);
+	glVertex3f(-0.0, -0.0, 0.0);
+	glVertex3f(-0.0, -0.25, 0.0);
+	glVertex3f(-0.25, -0.25, 0.0);
+	glEnd();
+	/////////////////////////////////////////back face
+	glBegin(GL_QUADS);
+	glVertex3f(-0.25, -0.0, 0.25);
+	glVertex3f(-0.0, -0.0, 0.25);
+	glVertex3f(-0.0, -0.25, 0.25);
+	glVertex3f(-0.25, -0.25, 0.25);
+	glEnd();
+	/////////////////////////////////////////left face
+	glBegin(GL_QUADS);
+	glVertex3f(-0.25, -0.0, 0.0);
+	glVertex3f(-0.25, -0.0, 0.25);
+	glVertex3f(-0.25, -0.25, 0.25);
+	glVertex3f(-0.25, -0.25, 0.0);
+	glEnd();
+	/////////////////////////////////////////right face
+	glBegin(GL_QUADS);
+	glVertex3f(-0.0, -0.0, 0.0);
+	glVertex3f(-0.0, -0.0, 0.25);
+	glVertex3f(-0.0, -0.25, 0.25);
+	glVertex3f(-0.0, -0.25, 0.0);
+	glEnd();
+	glPopMatrix();
+	//////////////////////////////////////////////////////////////draw finger 3-3
+	glPushMatrix();
+	/////////////////////////////////////////upper face
+	glColor3f(0.0, 1.0, 0.0);
+	glBegin(GL_QUADS);
+	glVertex3f(0.0, -0.0, 0.0);
+	glVertex3f(0.25, -0.0, 0.0);
+	glVertex3f(0.25, -0.0, 0.25);
+	glVertex3f(0.0, -0.0, 0.25);
+	glEnd();
+	/////////////////////////////////////////lower face
+	glBegin(GL_QUADS);
+	glVertex3f(0.0, -0.25, 0.0);
+	glVertex3f(0.25, -0.25, 0.0);
+	glVertex3f(0.25, -0.25, 0.25);
+	glVertex3f(0.0, -0.25, 0.25);
+	glEnd();
+	/////////////////////////////////////////front face
+	glBegin(GL_QUADS);
+	glVertex3f(0.0, -0.0, 0.0);
+	glVertex3f(0.25, -0.0, 0.0);
+	glVertex3f(0.25, -0.25, 0.0);
+	glVertex3f(0.0, -0.25, 0.0);
+	glEnd();
+	/////////////////////////////////////////back face
+	glBegin(GL_QUADS);
+	glVertex3f(0.0, -0.0, 0.25);
+	glVertex3f(0.25, -0.0, 0.25);
+	glVertex3f(0.25, -0.25, 0.25);
+	glVertex3f(0.0, -0.25, 0.25);
+	glEnd();
+	/////////////////////////////////////////left face
+	glBegin(GL_QUADS);
+	glVertex3f(0.0, -0.0, 0.0);
+	glVertex3f(0.0, -0.0, 0.25);
+	glVertex3f(0.0, -0.25, 0.25);
+	glVertex3f(0.0, -0.25, 0.0);
+	glEnd();
+	/////////////////////////////////////////right face
+	glBegin(GL_QUADS);
+	glVertex3f(0.25, -0.0, 0.0);
+	glVertex3f(0.25, -0.0, 0.25);
+	glVertex3f(0.25, -0.25, 0.25);
+	glVertex3f(0.25, -0.25, 0.0);
+	glEnd();
+	glPopMatrix();
+	//////////////////////////////////////////////////////////////draw finger 4-3
+	glPushMatrix();
+	/////////////////////////////////////////upper face
+	glColor3f(0.0, 0.0, 1.0);
+	glBegin(GL_QUADS);
+	glVertex3f(0.5, -0.0, 0.0);
+	glVertex3f(0.25, -0.0, 0.0);
+	glVertex3f(0.25, -0.0, 0.25);
+	glVertex3f(0.5, -0.0, 0.25);
+	glEnd();
+	/////////////////////////////////////////lower face
+	glBegin(GL_QUADS);
+	glVertex3f(0.5, -0.25, 0.0);
+	glVertex3f(0.25, -0.25, 0.0);
+	glVertex3f(0.25, -0.25, 0.25);
+	glVertex3f(0.5, -0.25, 0.25);
+	glEnd();
+	/////////////////////////////////////////front face
+	glBegin(GL_QUADS);
+	glVertex3f(0.5, -0.0, 0.0);
+	glVertex3f(0.25, -0.0, 0.0);
+	glVertex3f(0.25, -0.25, 0.0);
+	glVertex3f(0.5, -0.25, 0.0);
+	glEnd();
+	/////////////////////////////////////////back face
+	glBegin(GL_QUADS);
+	glVertex3f(0.5, -0.0, 0.25);
+	glVertex3f(0.25, -0.0, 0.25);
+	glVertex3f(0.25, -0.25, 0.25);
+	glVertex3f(0.5, -0.25, 0.25);
+	glEnd();
+	/////////////////////////////////////////left face
+	glBegin(GL_QUADS);
+	glVertex3f(0.5, -0.0, 0.0);
+	glVertex3f(0.5, -0.0, 0.25);
+	glVertex3f(0.5, -0.25, 0.25);
+	glVertex3f(0.5, -0.25, 0.0);
+	glEnd();
+	/////////////////////////////////////////right face
+	glBegin(GL_QUADS);
+	glVertex3f(0.25, -0.0, 0.0);
+	glVertex3f(0.25, -0.0, 0.25);
+	glVertex3f(0.25, -0.25, 0.25);
+	glVertex3f(0.25, -0.25, 0.0);
+	glEnd();
+	glPopMatrix();
+	glPopMatrix();
+	glPopMatrix();
 }
 
 void arm() {
@@ -158,125 +724,186 @@ void arm() {
 	projection();
 
 	glMatrixMode(GL_MODELVIEW);
-
-	glRotatef(1, 1.0, 1.0, 0.0);
-	////////////////////////////////////////////////////upper arm joint to body
-	
+	glLoadIdentity();
+	glRotatef(90, 0.0, 1.0, 0.0);
+	glPushMatrix();//////////////////////////////////////////////////////////////////////move whole arm
+	glRotatef(-45, 1.0, 0.0, 0.0);
+	//////////////////////////////////////////////////////////////upper arm joint to body
 	glPushMatrix();
 		glColor3f(1.0, 1.0, 1.0);
 		glTranslatef(0.0, 0.5, 0.0);
 		drawSphere(0.5, 30, 30);
 	glPopMatrix();
-	////////////////////////////////////////////////////draw left upper arm
+	//////////////////////////////////////////////////////////////draw left upper arm
 	glPushMatrix();
-	/////////////////////////////////////////upper face
-	glBegin(GL_QUADS);	
-	glColor3f(0.0, 0.0, 0.0);
-		glVertex3f(-0.5, 0.0, 0.5);
-		glVertex3f(0.5, 0.0, 0.5);
-		glVertex3f(0.5, 0.0, -0.5);
-		glVertex3f(-0.5, 0.0, -0.5);
-	glEnd();
-	/////////////////////////////////////////lower face
-	glBegin(GL_QUADS);
-	glColor3f(0.0, 0.0, 0.0);
-		glVertex3f(-0.5, -4.0, 0.5);
-		glVertex3f(0.5, -4.0, 0.5);
-		glVertex3f(0.5, -4.0, -0.5);
-		glVertex3f(-0.5, -4.0, -0.5);
-	glEnd();
-	/////////////////////////////////////////front face
-	glBegin(GL_QUADS);
-	glColor3f(1.0, 0.0, 0.0);
-		glVertex3f(-0.5, 0.0, 0.5);
-		glVertex3f(0.5, 0.0, 0.5);
-		glVertex3f(0.5, -4.0, 0.5);
-		glVertex3f(-0.5, -4.0, 0.5);
-	glEnd();
-	/////////////////////////////////////////back face
-	glBegin(GL_QUADS);
-	glColor3f(0.0, 1.0, 0.0);
-		glVertex3f(-0.5, 0.0, -0.5);
-		glVertex3f(0.5, 0.0, -0.5);
-		glVertex3f(0.5, -4.0, -0.5);
-		glVertex3f(-0.5, -4.0, -0.5);
-	glEnd();
-	/////////////////////////////////////////left face
-	glBegin(GL_QUADS);
-	glColor3f(0.0, 0.0, 1.0);
-		glVertex3f(-0.5, 0.0, 0.5);
-		glVertex3f(-0.5, 0.0, -0.5);
-		glVertex3f(-0.5, -4.0, -0.5);
-		glVertex3f(-0.5, -4.0, 0.5);
-	glEnd();
-	/////////////////////////////////////////right face
-	glBegin(GL_QUADS);
-	glColor3f(1.0, 1.0, 0.0);
-		glVertex3f(0.5, 0.0, 0.5);
-		glVertex3f(0.5, 0.0, -0.5);
-		glVertex3f(0.5, -4.0, -0.5);
-		glVertex3f(0.5, -4.0, 0.5);
-	glEnd();
+		/////////////////////////////////////////upper face
+		glBegin(GL_QUADS);	
+		glColor3f(0.0, 0.0, 0.0);
+			glVertex3f(-0.5, 0.0, 0.5);
+			glVertex3f(0.5, 0.0, 0.5);
+			glVertex3f(0.5, 0.0, -0.5);
+			glVertex3f(-0.5, 0.0, -0.5);
+		glEnd();
+		/////////////////////////////////////////lower face
+		glBegin(GL_QUADS);
+		glColor3f(0.0, 0.0, 0.0);
+			glVertex3f(-0.5, -4.0, 0.5);
+			glVertex3f(0.5, -4.0, 0.5);
+			glVertex3f(0.5, -4.0, -0.5);
+			glVertex3f(-0.5, -4.0, -0.5);
+		glEnd();
+		/////////////////////////////////////////front face
+		glBegin(GL_QUADS);
+		glColor3f(1.0, 0.0, 0.0);
+			glVertex3f(-0.5, 0.0, 0.5);
+			glVertex3f(0.5, 0.0, 0.5);
+			glVertex3f(0.5, -4.0, 0.5);
+			glVertex3f(-0.5, -4.0, 0.5);
+		glEnd();
+		/////////////////////////////////////////back face
+		glBegin(GL_QUADS);
+		glColor3f(0.0, 1.0, 0.0);
+			glVertex3f(-0.5, 0.0, -0.5);
+			glVertex3f(0.5, 0.0, -0.5);
+			glVertex3f(0.5, -4.0, -0.5);
+			glVertex3f(-0.5, -4.0, -0.5);
+		glEnd();
+		/////////////////////////////////////////left face
+		glBegin(GL_QUADS);
+		glColor3f(0.0, 0.0, 1.0);
+			glVertex3f(-0.5, 0.0, 0.5);
+			glVertex3f(-0.5, 0.0, -0.5);
+			glVertex3f(-0.5, -4.0, -0.5);
+			glVertex3f(-0.5, -4.0, 0.5);
+		glEnd();
+		/////////////////////////////////////////right face
+		glBegin(GL_QUADS);
+		glColor3f(1.0, 1.0, 0.0);
+			glVertex3f(0.5, 0.0, 0.5);
+			glVertex3f(0.5, 0.0, -0.5);
+			glVertex3f(0.5, -4.0, -0.5);
+			glVertex3f(0.5, -4.0, 0.5);
+		glEnd();
 	glPopMatrix();
-	////////////////////////////////////////////////////upper arm joint to lower arm
+	glPushMatrix();//////////////////////////////////////////////////////////////////////move Lower Arm
+	glTranslatef(0.0, -4.5, 0.0);
+	glRotatef(-90, 1.0, 0.0, 0.0);
+	//////////////////////////////////////////////////////////////upper arm joint to lower arm
 	glPushMatrix();
 		glColor3f(1.0, 1.0, 1.0);
-		glTranslatef(0.0, -4.5, 0.0);
 		drawSphere(0.5, 30, 30);
-	glPopMatrix();
-	////////////////////////////////////////////////////draw left lower arm
+	glPopMatrix();	
+	//////////////////////////////////////////////////////////////draw left lower arm
 	glPushMatrix();
-	/////////////////////////////////////////upper face
-	glBegin(GL_QUADS);
-	glColor3f(0.0, 0.0, 0.0);
-	glVertex3f(-0.5, -5.0, 0.5);
-	glVertex3f(0.5, -5.0, 0.5);
-	glVertex3f(0.5, -5.0, -0.5);
-	glVertex3f(-0.5, -5.0, -0.5);
-	glEnd();
-	/////////////////////////////////////////lower face
-	glBegin(GL_QUADS);
-	glColor3f(0.0, 0.0, 0.0);
-	glVertex3f(-0.5, -8.0, 0.5);
-	glVertex3f(0.5, -8.0, 0.5);
-	glVertex3f(0.5, -8.0, -0.5);
-	glVertex3f(-0.5, -8.0, -0.5);
-	glEnd();
-	/////////////////////////////////////////front face
-	glBegin(GL_QUADS);
-	glColor3f(1.0, 0.0, 0.0);
-	glVertex3f(-0.5, -5.0, 0.5);
-	glVertex3f(0.5, -5.0, 0.5);
-	glVertex3f(0.5, -8.0, 0.5);
-	glVertex3f(-0.5, -8.0, 0.5);
-	glEnd();
-	/////////////////////////////////////////back face
-	glBegin(GL_QUADS);
-	glColor3f(0.0, 1.0, 0.0);
-	glVertex3f(-0.5, -5.0, -0.5);
-	glVertex3f(0.5, -5.0, -0.5);
-	glVertex3f(0.5, -8.0, -0.5);
-	glVertex3f(-0.5, -8.0, -0.5);
-	glEnd();
-	/////////////////////////////////////////left face
-	glBegin(GL_QUADS);
-	glColor3f(0.0, 0.0, 1.0);
-	glVertex3f(-0.5, -5.0, 0.5);
-	glVertex3f(-0.5, -5.0, -0.5);
-	glVertex3f(-0.5, -8.0, -0.5);
-	glVertex3f(-0.5, -8.0, 0.5);
-	glEnd();
-	/////////////////////////////////////////right face
-	glBegin(GL_QUADS);
-	glColor3f(1.0, 1.0, 0.0);
-	glVertex3f(0.5, -5.0, 0.5);
-	glVertex3f(0.5, -5.0, -0.5);
-	glVertex3f(0.5, -8.0, -0.5);
-	glVertex3f(0.5, -8.0, 0.5);
-	glEnd();
+	glTranslatef(0.0, -0.5, 0.0);
+		/////////////////////////////////////////upper face
+		glBegin(GL_QUADS);
+			glColor3f(0.0, 0.0, 0.0);
+			glVertex3f(-0.5, -0.0, 0.5);
+			glVertex3f(0.5, -0.0, 0.5);
+			glVertex3f(0.5, -0.0, -0.5);
+			glVertex3f(-0.5, -0.0, -0.5);
+		glEnd();
+		/////////////////////////////////////////lower face
+		glBegin(GL_QUADS);
+			glColor3f(0.0, 0.0, 0.0);
+			glVertex3f(-0.5, -3.0, 0.5);
+			glVertex3f(0.5, -3.0, 0.5);
+			glVertex3f(0.5, -3.0, -0.5);
+			glVertex3f(-0.5, -3.0, -0.5);
+		glEnd();
+		/////////////////////////////////////////front face
+		glBegin(GL_QUADS);
+			glColor3f(1.0, 0.0, 0.0);
+			glVertex3f(-0.5, -0.0, 0.5);
+			glVertex3f(0.5, -0.0, 0.5);
+			glVertex3f(0.5, -3.0, 0.5);
+			glVertex3f(-0.5, -3.0, 0.5);
+		glEnd();
+		/////////////////////////////////////////back face
+		glBegin(GL_QUADS);
+			glColor3f(0.0, 1.0, 0.0);
+			glVertex3f(-0.5, -0.0, -0.5);
+			glVertex3f(0.5, -0.0, -0.5);
+			glVertex3f(0.5, -3.0, -0.5);
+			glVertex3f(-0.5, -3.0, -0.5);
+		glEnd();
+		/////////////////////////////////////////left face
+		glBegin(GL_QUADS);
+			glColor3f(0.0, 0.0, 1.0);
+			glVertex3f(-0.5, -0.0, 0.5);
+			glVertex3f(-0.5, -0.0, -0.5);
+			glVertex3f(-0.5, -3.0, -0.5);
+			glVertex3f(-0.5, -3.0, 0.5);
+		glEnd();
+		/////////////////////////////////////////right face
+		glBegin(GL_QUADS);
+			glColor3f(1.0, 1.0, 0.0);
+			glVertex3f(0.5, -0.0, 0.5);
+			glVertex3f(0.5, -0.0, -0.5);
+			glVertex3f(0.5, -3.0, -0.5);
+			glVertex3f(0.5, -3.0, 0.5);
+		glEnd();
 	glPopMatrix();
-
-
+	glPushMatrix();//////////////////////////////////////////////////////////////////////move hand
+	glTranslatef(0.0, -3.5, 0.25);
+	glRotatef(-90, 1.0, 0.0, 0.0);
+	//////////////////////////////////////////////////////////////palm
+	glPushMatrix();
+		/////////////////////////////////////////upper face
+		glColor3f(1.0, 0.0, 1.0);
+		glBegin(GL_QUADS);
+			glVertex3f(-0.5, -0.0, 0.25);
+			glVertex3f(0.5, -0.0, 0.25);
+			glVertex3f(0.5, -0.0, -0.25);
+			glVertex3f(-0.5, -0.0, -0.25);
+		glEnd();
+		/////////////////////////////////////////lower face
+		glColor3f(1.0, 0.0, 1.0);
+		glBegin(GL_QUADS);
+			glVertex3f(-0.5, -1.0, 0.25);
+			glVertex3f(0.5, -1.0, 0.25);
+			glVertex3f(0.5, -1.0, -0.25);
+			glVertex3f(-0.5, -1.0, -0.25);
+		glEnd();
+		/////////////////////////////////////////front face
+		glColor3f(1.0, 0.0, 1.0);
+		glBegin(GL_QUADS);
+			glVertex3f(-0.5, -0.0, 0.25);
+			glVertex3f(0.5, -0.0, 0.25);
+			glVertex3f(0.5, -1.0, 0.25);
+			glVertex3f(-0.5, -1.0, 0.25);
+		glEnd();
+		/////////////////////////////////////////back face
+		glColor3f(1.0, 0.0, 1.0);
+		glBegin(GL_QUADS);
+			glVertex3f(-0.5, -0.0, -0.25);
+			glVertex3f(0.5, -0.0, -0.25);
+			glVertex3f(0.5, -1.0, -0.25);
+			glVertex3f(-0.5, -1.0, -0.25);
+		glEnd();
+		/////////////////////////////////////////left face
+		glColor3f(1.0, 0.0, 1.0);
+		glBegin(GL_QUADS);
+			glVertex3f(-0.5, -0.0, 0.25);
+			glVertex3f(-0.5, -0.0, -0.25);
+			glVertex3f(-0.5, -1.0, -0.25);
+			glVertex3f(-0.5, -1.0, 0.25);
+		glEnd();
+		/////////////////////////////////////////right face
+		glColor3f(1.0, 0.0, 1.0);
+		glBegin(GL_QUADS);
+			glVertex3f(0.5, -0.0, 0.25);
+			glVertex3f(0.5, -0.0, -0.25);
+			glVertex3f(0.5, -1.0, -0.25);
+			glVertex3f(0.5, -1.0, 0.25);
+		glEnd();
+	glPopMatrix();
+	//////////////////////////////////////////////////////////////draw finger
+	drawFinger();
+	glPopMatrix();
+	glPopMatrix();
+	glPopMatrix();
 }
 
 void display()
