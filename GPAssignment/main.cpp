@@ -113,7 +113,7 @@ void drawSphere(double r, int slice, int stack) {
 	GLUquadricObj* sphere = NULL;   // create a quadric obj pointer
 	sphere = gluNewQuadric();       // create a new quadric obj in the memory
 	glLineWidth(1.0);
-	gluQuadricDrawStyle(sphere, GLU_LINE);//in line style
+	gluQuadricDrawStyle(sphere, GLU_FILL);//in line style
 	gluSphere(sphere, r, slice, stack); // draw sphere
 	gluDeleteQuadric(sphere); //delete the quadric ob
 }
@@ -139,6 +139,7 @@ void drawCone(double tr, double h) {
 
 void robot() {
 	glClearColor(0.75, 0.75, 0.75, 0.0);
+	glEnable(GL_DEPTH_TEST);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	projection();
@@ -149,11 +150,140 @@ void robot() {
 
 }
 
+void arm() {
+	glClearColor(0.75, 0.75, 0.75, 0.0);
+	glEnable(GL_DEPTH_TEST);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	projection();
+
+	glMatrixMode(GL_MODELVIEW);
+
+	glRotatef(1, 1.0, 1.0, 0.0);
+	////////////////////////////////////////////////////upper arm joint to body
+	
+	glPushMatrix();
+		glColor3f(1.0, 1.0, 1.0);
+		glTranslatef(0.0, 0.5, 0.0);
+		drawSphere(0.5, 30, 30);
+	glPopMatrix();
+	////////////////////////////////////////////////////draw left upper arm
+	glPushMatrix();
+	/////////////////////////////////////////upper face
+	glBegin(GL_QUADS);	
+	glColor3f(0.0, 0.0, 0.0);
+		glVertex3f(-0.5, 0.0, 0.5);
+		glVertex3f(0.5, 0.0, 0.5);
+		glVertex3f(0.5, 0.0, -0.5);
+		glVertex3f(-0.5, 0.0, -0.5);
+	glEnd();
+	/////////////////////////////////////////lower face
+	glBegin(GL_QUADS);
+	glColor3f(0.0, 0.0, 0.0);
+		glVertex3f(-0.5, -4.0, 0.5);
+		glVertex3f(0.5, -4.0, 0.5);
+		glVertex3f(0.5, -4.0, -0.5);
+		glVertex3f(-0.5, -4.0, -0.5);
+	glEnd();
+	/////////////////////////////////////////front face
+	glBegin(GL_QUADS);
+	glColor3f(1.0, 0.0, 0.0);
+		glVertex3f(-0.5, 0.0, 0.5);
+		glVertex3f(0.5, 0.0, 0.5);
+		glVertex3f(0.5, -4.0, 0.5);
+		glVertex3f(-0.5, -4.0, 0.5);
+	glEnd();
+	/////////////////////////////////////////back face
+	glBegin(GL_QUADS);
+	glColor3f(0.0, 1.0, 0.0);
+		glVertex3f(-0.5, 0.0, -0.5);
+		glVertex3f(0.5, 0.0, -0.5);
+		glVertex3f(0.5, -4.0, -0.5);
+		glVertex3f(-0.5, -4.0, -0.5);
+	glEnd();
+	/////////////////////////////////////////left face
+	glBegin(GL_QUADS);
+	glColor3f(0.0, 0.0, 1.0);
+		glVertex3f(-0.5, 0.0, 0.5);
+		glVertex3f(-0.5, 0.0, -0.5);
+		glVertex3f(-0.5, -4.0, -0.5);
+		glVertex3f(-0.5, -4.0, 0.5);
+	glEnd();
+	/////////////////////////////////////////right face
+	glBegin(GL_QUADS);
+	glColor3f(1.0, 1.0, 0.0);
+		glVertex3f(0.5, 0.0, 0.5);
+		glVertex3f(0.5, 0.0, -0.5);
+		glVertex3f(0.5, -4.0, -0.5);
+		glVertex3f(0.5, -4.0, 0.5);
+	glEnd();
+	glPopMatrix();
+	////////////////////////////////////////////////////upper arm joint to lower arm
+	glPushMatrix();
+		glColor3f(1.0, 1.0, 1.0);
+		glTranslatef(0.0, -4.5, 0.0);
+		drawSphere(0.5, 30, 30);
+	glPopMatrix();
+	////////////////////////////////////////////////////draw left lower arm
+	glPushMatrix();
+	/////////////////////////////////////////upper face
+	glBegin(GL_QUADS);
+	glColor3f(0.0, 0.0, 0.0);
+	glVertex3f(-0.5, -5.0, 0.5);
+	glVertex3f(0.5, -5.0, 0.5);
+	glVertex3f(0.5, -5.0, -0.5);
+	glVertex3f(-0.5, -5.0, -0.5);
+	glEnd();
+	/////////////////////////////////////////lower face
+	glBegin(GL_QUADS);
+	glColor3f(0.0, 0.0, 0.0);
+	glVertex3f(-0.5, -8.0, 0.5);
+	glVertex3f(0.5, -8.0, 0.5);
+	glVertex3f(0.5, -8.0, -0.5);
+	glVertex3f(-0.5, -8.0, -0.5);
+	glEnd();
+	/////////////////////////////////////////front face
+	glBegin(GL_QUADS);
+	glColor3f(1.0, 0.0, 0.0);
+	glVertex3f(-0.5, -5.0, 0.5);
+	glVertex3f(0.5, -5.0, 0.5);
+	glVertex3f(0.5, -8.0, 0.5);
+	glVertex3f(-0.5, -8.0, 0.5);
+	glEnd();
+	/////////////////////////////////////////back face
+	glBegin(GL_QUADS);
+	glColor3f(0.0, 1.0, 0.0);
+	glVertex3f(-0.5, -5.0, -0.5);
+	glVertex3f(0.5, -5.0, -0.5);
+	glVertex3f(0.5, -8.0, -0.5);
+	glVertex3f(-0.5, -8.0, -0.5);
+	glEnd();
+	/////////////////////////////////////////left face
+	glBegin(GL_QUADS);
+	glColor3f(0.0, 0.0, 1.0);
+	glVertex3f(-0.5, -5.0, 0.5);
+	glVertex3f(-0.5, -5.0, -0.5);
+	glVertex3f(-0.5, -8.0, -0.5);
+	glVertex3f(-0.5, -8.0, 0.5);
+	glEnd();
+	/////////////////////////////////////////right face
+	glBegin(GL_QUADS);
+	glColor3f(1.0, 1.0, 0.0);
+	glVertex3f(0.5, -5.0, 0.5);
+	glVertex3f(0.5, -5.0, -0.5);
+	glVertex3f(0.5, -8.0, -0.5);
+	glVertex3f(0.5, -8.0, 0.5);
+	glEnd();
+	glPopMatrix();
+
+
+}
+
 void display()
 {
 	switch (Qnum) {
 	case 1:
-		robot();
+		arm();
 		break;
 	case 2:
 		break;
