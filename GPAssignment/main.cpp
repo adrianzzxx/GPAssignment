@@ -260,7 +260,7 @@ void walk() {
 			count = 0;
 			legcond = true;
 		}
-		
+
 	}
 }
 
@@ -496,64 +496,64 @@ LRESULT WINAPI WindowProcedure(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam
 		}
 
 		else if (wParam == VK_F1) {
-		if (isLightOn) {
-			posA[0] += lSpeed;
-		}
+			if (isLightOn) {
+				posA[0] += lSpeed;
+			}
 		}
 		else if (wParam == VK_F2) {
-		if (isLightOn) {
-			posA[0] -= lSpeed;
-		}
+			if (isLightOn) {
+				posA[0] -= lSpeed;
+			}
 		}
 		else if (wParam == VK_F3) {
-		if (isLightOn) {
-			posA[1] -= lSpeed;
-		}
+			if (isLightOn) {
+				posA[1] -= lSpeed;
+			}
 		}
 		else if (wParam == VK_F4) {
-		if (isLightOn) {
-			posA[1] += lSpeed;
-		}
+			if (isLightOn) {
+				posA[1] += lSpeed;
+			}
 		}
 		else if (wParam == VK_F5) {
-		if (isLightOn) {
-			posA[2] += lSpeed;
-		}
+			if (isLightOn) {
+				posA[2] += lSpeed;
+			}
 		}
 		else if (wParam == VK_F6) {
-		if (isLightOn) {
-			posA[2] -= lSpeed;
-		}
+			if (isLightOn) {
+				posA[2] -= lSpeed;
+			}
 		}
 		else if (wParam == VK_F7) {
-		if (isLightOn) {
-			posD[0] += lSpeed;
-		}
+			if (isLightOn) {
+				posD[0] += lSpeed;
+			}
 		}
 		else if (wParam == VK_F8) {
-		if (isLightOn) {
-			posD[0] -= lSpeed;
-		}
+			if (isLightOn) {
+				posD[0] -= lSpeed;
+			}
 		}
 		else if (wParam == VK_F9) {
-		if (isLightOn) {
-			posD[1] -= lSpeed;
-		}
+			if (isLightOn) {
+				posD[1] -= lSpeed;
+			}
 		}
 		else if (wParam == 0xDB) {    // "{"
-		if (isLightOn) {
-			posD[1] += lSpeed;
-		}
+			if (isLightOn) {
+				posD[1] += lSpeed;
+			}
 		}
 		else if (wParam == 0xDD) {   // "}"
-		if (isLightOn) {
-			posD[2] += lSpeed;
-		}
+			if (isLightOn) {
+				posD[2] += lSpeed;
+			}
 		}
 		else if (wParam == 0xDC) {  // "\"
-		if (isLightOn) {
-			posD[2] -= lSpeed;
-		}
+			if (isLightOn) {
+				posD[2] -= lSpeed;
+			}
 		}
 		break;
 
@@ -932,48 +932,48 @@ void drawTriangularPrismLine(float size) {
 
 
 void drawCube(float size) {
-    glBegin(GL_QUADS);
-    // Face 1 : BOTTOM
-    glVertex3f(0.0f, 0.0f, size);//1
-    glVertex3f(size, 0.0f, size);//2
-    glVertex3f(size, 0.0f, 0.0f);//3
-    glVertex3f(0.0f, 0.0f, 0.0f);//4
-    glEnd();
-    // Face 2 : 
-    glBegin(GL_QUADS);
-    glVertex3f(0.0f, 0.0f, 0.0f);//4 last point of face one
-    glVertex3f(0.0f, size, 0.0f);
-    glVertex3f(0.0f, size, size);
-    glVertex3f(0.0f, 0.0f, size);
-    glEnd();
-    // Face 3 : 
-    glBegin(GL_QUADS);
-    glVertex3f(0.0f, 0.0f, size);
-    glVertex3f(0.0f, size, size);
-    glVertex3f(size, size, size);
-    glVertex3f(size, 0.0f, size);
-    glEnd();
-    // Face 4 : 
-    glBegin(GL_QUADS);
-    glVertex3f(size, 0.0f, size);
-    glVertex3f(size, size, size);
-    glVertex3f(size, size, 0.0f);
-    glVertex3f(size, 0.0f, 0.0f);
-    glEnd();
-    // Face 5 : 
-    glBegin(GL_QUADS);
-    glVertex3f(size, 0.0f, 0.0f);
-    glVertex3f(0.0f, 0.0f, 0.0f);
-    glVertex3f(0.0f, size, 0.0f);
-    glVertex3f(size, size, 0.0f);
-    glEnd();
-    // Face 6 : 
-    glBegin(GL_QUADS);
-    glVertex3f(size, size, 0.0f);
-    glVertex3f(0.0f, size, 0.0f);
-    glVertex3f(0.0f, size, size);
-    glVertex3f(size, size, size);
-    glEnd();
+	glBegin(GL_QUADS);
+	// Face 1 : BOTTOM
+	glVertex3f(0.0f, 0.0f, size);//1
+	glVertex3f(size, 0.0f, size);//2
+	glVertex3f(size, 0.0f, 0.0f);//3
+	glVertex3f(0.0f, 0.0f, 0.0f);//4
+	glEnd();
+	// Face 2 : 
+	glBegin(GL_QUADS);
+	glVertex3f(0.0f, 0.0f, 0.0f);//4 last point of face one
+	glVertex3f(0.0f, size, 0.0f);
+	glVertex3f(0.0f, size, size);
+	glVertex3f(0.0f, 0.0f, size);
+	glEnd();
+	// Face 3 : 
+	glBegin(GL_QUADS);
+	glVertex3f(0.0f, 0.0f, size);
+	glVertex3f(0.0f, size, size);
+	glVertex3f(size, size, size);
+	glVertex3f(size, 0.0f, size);
+	glEnd();
+	// Face 4 : 
+	glBegin(GL_QUADS);
+	glVertex3f(size, 0.0f, size);
+	glVertex3f(size, size, size);
+	glVertex3f(size, size, 0.0f);
+	glVertex3f(size, 0.0f, 0.0f);
+	glEnd();
+	// Face 5 : 
+	glBegin(GL_QUADS);
+	glVertex3f(size, 0.0f, 0.0f);
+	glVertex3f(0.0f, 0.0f, 0.0f);
+	glVertex3f(0.0f, size, 0.0f);
+	glVertex3f(size, size, 0.0f);
+	glEnd();
+	// Face 6 : 
+	glBegin(GL_QUADS);
+	glVertex3f(size, size, 0.0f);
+	glVertex3f(0.0f, size, 0.0f);
+	glVertex3f(0.0f, size, size);
+	glVertex3f(size, size, size);
+	glEnd();
 }
 
 void drawCubeLine(float size) {
@@ -1025,7 +1025,7 @@ void drawCubeLine(float size) {
 
 
 void leg() {
-	
+
 	///------------------------------------------------ left leg
 
 	glPushMatrix(); //----------------------------------------------------- rotate left leg 1 - whole leg
@@ -2112,7 +2112,7 @@ void leg() {
 
 
 
-	
+
 
 	///------------------------------------------------ right leg
 
@@ -2234,7 +2234,7 @@ void leg() {
 	//glRotatef(235, 0, 0, 1);
 	//glScalef(0.25, 1.8, 1);
 	glColor3f(0, 0, 0);
-	drawCylinderLine(0.3,0.3,2.2);
+	drawCylinderLine(0.3, 0.3, 2.2);
 	glColor3f(0, 0, 0);
 	drawCylinder(0.3, 0.3, 2.2);
 	glPopMatrix();
@@ -2528,7 +2528,7 @@ void leg() {
 	drawPyramid(1);
 	glPopMatrix();
 
-	
+
 
 	//----------------------fourth layer side
 
@@ -2598,7 +2598,7 @@ void leg() {
 	drawPyramid(1);
 	glPopMatrix();
 
-	
+
 
 
 	//----------------------end of fourth layer side
@@ -2685,11 +2685,11 @@ void leg() {
 	drawPyramid(1);
 	glPopMatrix();
 
-	
+
 
 	//----------------------end of third layer side
 
-	
+
 
 	//---------------------second layer side
 	glPushMatrix();
@@ -2927,7 +2927,7 @@ void leg() {
 	glColor3f(1, 1, 1);
 	drawPyramid(1);
 	glPopMatrix();
-	
+
 
 	//---------------------end of first layer side
 
@@ -2967,8 +2967,8 @@ void leg() {
 
 
 	//----------------------------------------------------------------------------------------------------------------------end of botton leg decorations
-	
-	
+
+
 	// right ankle
 	glPushMatrix();
 	glTranslatef(0, -12.5, 2.75);
@@ -2990,12 +2990,12 @@ void leg() {
 	//---------------------------------------right soles decorations
 
 	//----------------- white part
-	
+
 	glPushMatrix();
 	glTranslatef(-0.5, -12.8, 2.75);// z - axis diff with left---- cube
 	//glRotatef(120, 0, 0, 1);
 	glScalef(1, 1, 0.5);
-	glColor3f(0,0,0);
+	glColor3f(0, 0, 0);
 	drawCubeLine(1);
 	glColor3f(0.247, 0.247, 0.251);
 	drawCube(1);
@@ -3070,7 +3070,7 @@ void leg() {
 	glScalef(2, 0.5, 0.5);
 	glColor3f(0, 0, 0);
 	drawPyramidLine(1);
-	glColor3f(1,1, 1);
+	glColor3f(1, 1, 1);
 	drawPyramid(1);
 	glPopMatrix();
 
@@ -3277,7 +3277,7 @@ void body() {
 	glColor3f(1, 1, 1);
 	drawCube(2);
 	glPopMatrix();
-	
+
 
 	glPushMatrix();
 	glTranslatef(-2.2, -1.6, -3.3); //---- right white
@@ -3321,11 +3321,11 @@ void body() {
 	glPushMatrix();
 	glRotatef(10, 1, 0, 0);
 	glTranslatef(2.85, 1.8, -0.1);
-	
+
 
 	glPushMatrix();
 	glScalef(1, 1, 1);
-	glTranslatef(-3.65, -1.8, -3.4); 
+	glTranslatef(-3.65, -1.8, -3.4);
 	glRotatef(-90, 0, 0, 1);
 	//glRotatef(90, 1, 0, 0);
 	//Rotatef(-5, 0, 0, 1);
@@ -3529,7 +3529,7 @@ void body() {
 
 	glPushMatrix();
 	glScalef(1, 1, -1);
-	glTranslatef(1.9, -1.6, -3.2); 
+	glTranslatef(1.9, -1.6, -3.2);
 	glRotatef(100, 0, 0, 1);
 	glRotatef(265, 0, 1, 0);
 	//glRotatef(15, 0, 0, 1);
@@ -3633,7 +3633,7 @@ void body() {
 	glScalef(1, 1, -1);
 
 	glPushMatrix();
-	glTranslatef(1.4, -1.9, 0.8); 
+	glTranslatef(1.4, -1.9, 0.8);
 	glRotatef(-5, 1, 0, 0);
 	glRotatef(10, 0, 0, 1);
 	glScalef(0.3, 1.3, 1.2);
@@ -3645,7 +3645,7 @@ void body() {
 
 	glPushMatrix();
 	glScalef(1, 1, -1);
-	glTranslatef(1.9, -1.6, -3.2); 
+	glTranslatef(1.9, -1.6, -3.2);
 	glRotatef(100, 0, 0, 1);
 	glRotatef(265, 0, 1, 0);
 	//glRotatef(15, 0, 0, 1);
@@ -3976,7 +3976,7 @@ void body() {
 	glTranslatef(0.82, 2.5, -2.6);
 	glRotatef(40, 0, 0, 1);
 	//glRotatef(90, 0, 1, 0);
-	glScalef(0.5, 0.22,2.6);//2.2
+	glScalef(0.5, 0.22, 2.6);//2.2
 	glColor3f(0, 0, 0);
 	drawCubeLine(2);
 	glColor3f(1, 1, 1);
