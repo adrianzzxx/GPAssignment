@@ -584,7 +584,7 @@ LRESULT WINAPI WindowProcedure(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam
 				}
 			}
 		}
-		else if (wParam == 'K')       
+		else if (wParam == 'N')       
 		{
 			change += 1;
 			if (change == 5)
@@ -708,7 +708,7 @@ void lighting() {
 
 }
 
-void drawCube1(double size) {
+void drawCube1(float size) {
 	glBegin(GL_QUADS);
 
 	glTexCoord2f(1.0f, 1.0f);
@@ -777,7 +777,7 @@ void drawCube1(double size) {
 	glEnd();
 }
 
-void drawSideCube(double size) {
+void drawSideCube(float size) {
 
 	glBegin(GL_QUADS);
 
@@ -846,7 +846,7 @@ void drawSideCube(double size) {
 	glEnd();
 }
 
-void drawSideCubeLine(double size) {
+void drawSideCubeLine(float size) {
 
 	glColor3f(0.0, 0.0, 0.0);
 	glLineWidth(2.0);
@@ -894,7 +894,7 @@ void drawSideCubeLine(double size) {
 	glEnd();
 }
 
-void drawCube1Line(double size) {
+void drawCube1Line(float size) {
 	glColor3f(0.0, 0.0, 0.0);
 	glLineWidth(2.0);
 	glBegin(GL_LINE_LOOP);
@@ -940,7 +940,7 @@ void drawCube1Line(double size) {
 	glEnd();
 }
 
-void drawSphere(double r, int slice, int stack) {
+void drawSphere(float r, int slice, int stack) {
 	GLUquadricObj* sphere = NULL;   // create a quadric obj pointer
 	sphere = gluNewQuadric();       // create a new quadric obj in the memory
 	glLineWidth(1.0);
@@ -949,7 +949,7 @@ void drawSphere(double r, int slice, int stack) {
 	gluDeleteQuadric(sphere); //delete the quadric ob
 }
 
-void drawSphereLine(double r, int slice, int stack) {
+void drawSphereLine(float r, int slice, int stack) {
 	GLUquadricObj* sphere = NULL;   // create a quadric obj pointer
 	sphere = gluNewQuadric();       // create a new quadric obj in the memory
 	glLineWidth(1.0);
@@ -958,7 +958,7 @@ void drawSphereLine(double r, int slice, int stack) {
 	gluDeleteQuadric(sphere); //delete the quadric ob
 }
 
-void drawCylinder(double br, double tr, double h) {
+void drawCylinder(float br, float tr, float h) {
 	GLUquadricObj* cylinder = NULL;   // create a quadric obj pointer
 	cylinder = gluNewQuadric();       // create a new quadric obj in the memory
 	glLineWidth(1.0);
@@ -967,7 +967,7 @@ void drawCylinder(double br, double tr, double h) {
 	gluDeleteQuadric(cylinder); //delete the quadric ob
 }
 
-void drawCylinderLine(double br, double tr, double h) {
+void drawCylinderLine(float br, float tr, float h) {
 	GLUquadricObj* cylinder = NULL;   // create a quadric obj pointer
 	cylinder = gluNewQuadric();       // create a new quadric obj in the memory
 	glLineWidth(1.5);
@@ -976,7 +976,7 @@ void drawCylinderLine(double br, double tr, double h) {
 	gluDeleteQuadric(cylinder); //delete the quadric ob
 }
 
-void drawCone(double tr, double h) {
+void drawCone(float tr, float h) {
 	GLUquadricObj* cone = NULL;   // create a quadric obj pointer
 	cone = gluNewQuadric();       // create a new quadric obj in the memory
 
@@ -7632,8 +7632,8 @@ void robot() {
 	glRotatef(90, 0.0, 1.0, 0.0);
 
 	///--------------------------------translate whole
-	if (txwhole < -10) {
-		txwhole = 10;
+	if (txwhole < -8.5) {
+		txwhole = 8.5;
 	}
 	glPushMatrix();
 	glRotatef(rp, 0, 1, 0.0);
