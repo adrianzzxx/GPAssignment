@@ -253,14 +253,14 @@ void backleftleg() {
 
 void leftmovefront() {
 	upleftleg();
-	txwhole -= 0.1;
+	txwhole -= 0.008;
 	backrightleg();
 
 }
 
 void rightmovefront() {
 	uprightleg();
-	txwhole -= 0.1;
+	txwhole -= 0.008;
 	backleftleg();
 }
 
@@ -371,6 +371,7 @@ LRESULT WINAPI WindowProcedure(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam
 			VSlash = false;
 			SwingFront = false;
 			resetleg();
+			txwhole = 8.5;
 		}
 		else if (wParam == '2') {
 			Qnum = 2;
@@ -676,11 +677,14 @@ void projection() {
 	}
 	else
 	{
-		gluPerspective(70, 1, 0.6, 51);
+		gluPerspective(90, 1, 1, 100);
+		glFrustum(-30.0, 30.0, -30.0, 30.0, -10, 100);
 		glTranslatef(0, 0, zoom);
-		glRotatef(0, 0, 1, 0);
 	}
 }
+
+
+
 
 void lighting() {
     if (isLightOn) {
@@ -7616,13 +7620,18 @@ void robot() {
 	GLuint textureArr[6];
 
 	//------------------------------------------------------------------------------------------------------background
-	/*glPushMatrix();
-	glTranslatef(0, 0, 0);
-	textureArr[5] = loadTexture("s.bmp");
-	glColor3f(1, 1, 1);
-	drawTextSphere(20);
-	glDeleteTextures(1, &textureArr[5]);
-	glPopMatrix();*/
+	//glPushMatrix();
+	//glPushMatrix();
+	//glTranslatef(0, 0, 8);  // Translate the sphere forward to make it visible in ortho
+
+	//textureArr[5] = loadTexture("s.bmp");
+
+	//glColor3f(1, 1, 1);  // Ensure the texture is not tinted
+	//drawTextSphere(isOrtho ? 18 : 30);  // Use a smaller sphere in orthographic mode
+
+	//glDeleteTextures(1, &textureArr[5]);
+	//glPopMatrix();
+	//glPopMatrix();
 
 
 	glPushMatrix();
@@ -7631,10 +7640,7 @@ void robot() {
 	glRotatef(rotateX, 1, 0, 0);
 	glRotatef(90, 0.0, 1.0, 0.0);
 
-	///--------------------------------translate whole
-	if (txwhole < -8.5) {
-		txwhole = 8.5;
-	}
+	
 	glPushMatrix();
 	glRotatef(rp, 0, 1, 0.0);
 	glTranslatef(txwhole, tywhole, tzwhole);
