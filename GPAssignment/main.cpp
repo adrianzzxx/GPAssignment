@@ -371,7 +371,7 @@ LRESULT WINAPI WindowProcedure(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam
 			VSlash = false;
 			SwingFront = false;
 			resetleg();
-			txwhole = 8.5;
+			txwhole = 6;
 		}
 		else if (wParam == '2') {
 			Qnum = 2;
